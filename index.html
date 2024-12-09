@@ -77,6 +77,11 @@
         input:focus {
             border-color: #db5d5d;
         }
+        
+        .error {
+            color: red; 
+            margin-top: 10px; 
+        }
 
     </style>
 </head>
@@ -111,15 +116,15 @@
             let name = document.getElementById("user_name").value
             let email = document.getElementById("user_email").value
             let phone = document.getElementById("user_number").value
-            if(name.lenght < 5) {
+            if(name.length < 5) {
                 document.getElementById("error").innerText = "Ошибка в имени";
                 return;
             }
-            if(email.lenght < 5) {
+            if(email.length < 5) {
                 document.getElementById("error").innerText = "Ошибка в email";
                 return;
             }
-            if(phone.lenght < 5) {
+            if(phone.length < 5) {
                 document.getElementById("error").innerText = "Ошибка в номере телефона";
                 return;
             }
@@ -129,7 +134,7 @@
                 email: email,
                 phone: phone
             }
-            tg.sendDa(JSON.stringify(data));
+            tg.sendData(JSON.stringify(data));
 
             tg.close();
         })
