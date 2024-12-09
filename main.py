@@ -6,8 +6,8 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    markup.add(types.KeyboardButton('Открыть веб страницу', web_app=WebAppInfo(url='https://omenx11.github.io/tg-apps/index.html')))
+    markup = types.InlineKeyboardMarkup(resize_keyboard=True)
+    markup.add(types.InlineKeyboardButton('Открыть веб страницу', web_app=WebAppInfo(url='https://omenx11.github.io/tg-apps/index.html')))
     await message.answer('Привет, мой друг!', reply_markup=markup)
 
 
